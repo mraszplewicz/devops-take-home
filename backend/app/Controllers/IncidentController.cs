@@ -26,7 +26,7 @@ namespace devops_app_api.Controllers
         public IEnumerable<Incident> Get()
         {
             var incidents = new List<Incident>();
-            incidents.AddRange(DbIncidents());
+            // incidents.AddRange(DbIncidents());
             incidents.AddRange(RandomIncidents());
             return incidents.ToImmutableList();
         }
