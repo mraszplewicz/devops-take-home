@@ -1,0 +1,17 @@
+version: "3"
+services:
+    app:
+        build: app
+        ports:
+            - "8000:80"
+        environment:
+            ConnectionStrings__Db: "Server=db;Database=devops-db;User=sa;Password=Your_password123;"
+        links:
+            - db
+    db:
+        image: "microsoft/mssql-server-linux"
+        ports:
+            - "1433:1433"
+        environment:
+            SA_PASSWORD: "Your_password123"
+            ACCEPT_EULA: "Y"
