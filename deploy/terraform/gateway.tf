@@ -145,3 +145,8 @@ resource "null_resource" "update_backend_http_settings_config_frontend" {
 
   depends_on = ["null_resource.update_backend_http_settings_config_backend"]
 }
+
+data "azurerm_public_ip" "gateway_ip" {
+  name                = "${azurerm_public_ip.pip.name}"
+  resource_group_name = "${azurerm_application_gateway.gateway.resource_group_name}"
+}

@@ -33,3 +33,8 @@ variable "backend_app_service_plan_sku_size" {
   description = "SKU size of the Backend App Service Plan"
   default     = "B1"
 }
+
+output "app_url" {
+  description = "Public url of deployed application"
+  value = "http://${data.azurerm_public_ip.gateway_ip.ip_address}/"
+}
