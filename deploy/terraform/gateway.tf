@@ -1,3 +1,4 @@
+# app services and databases should also be in virtual network - it is not available in free pricing plan
 resource "azurerm_virtual_network" "vnet" {
   name                = "${var.system_name}-${var.environment_name}-gateway-vnet"
   resource_group_name = "${var.resource_group}"
